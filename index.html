@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>XEM VIDEO SAU KHI NHẤP QUẢNG CÁO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        #adPopup {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            max-width: 500px;
+            margin: 50px auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        #afflink {
+            background: #ff5722;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 15px 0;
+        }
+        #content {
+            display: none;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="adPopup">
+        <h2>QUẢNG CÁO SHOPEE AFFILIATE</h2>
+        <p>Vui lòng nhấn vào link bên dưới để mở khóa video!</p>
+        <a href="https://s.shopee.vn/8AKxdfsjlk" target="_blank" id="afflink">NHẤN VÀO ĐÂY</a>
+    </div>
+
+    <div id="content">
+        <iframe 
+            width="560" 
+            height="315" 
+            src="https://tamtanluongtam.github.io/tamne/" 
+            frameborder="0" 
+            allowfullscreen
+        ></iframe>
+    </div>
+
+    <script>
+        document.getElementById('afflink').addEventListener('click', function() {
+            localStorage.setItem('adClicked', 'true');
+            document.getElementById('adPopup').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        });
+
+        if (localStorage.getItem('adClicked') === 'true') {
+            document.getElementById('adPopup').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
